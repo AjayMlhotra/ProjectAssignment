@@ -1,0 +1,78 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdk 33
+    defaultConfig {
+        applicationId "com.aidb"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField 'String', 'BASE_URL', '"https://api.nytimes.com/"'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+kapt {
+    correctErrorTypes = true
+}
+
+dependencies {
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation deps.kotlin.junit
+    androidTestImplementation deps.kotlin.test
+    androidTestImplementation deps.kotlin.espresso
+
+    // Added Dependencies
+    implementation deps.kotlin.core
+    implementation deps.app_compact
+    implementation deps.constraint_layout
+    implementation deps.recycler_view
+
+    //Dependency Injection
+    implementation deps.dagger_hilt.hilt_version
+    kapt deps.dagger_hilt.kotlin_compiler
+
+    // Networking
+    implementation deps.network.gson
+    implementation deps.network.retrofit
+    implementation deps.network.okhttp
+    implementation deps.network.okhttp_loggin_interceptor
+
+    //Coroutine
+    implementation deps.coroutine.android
+    implementation deps.coroutine.core
+
+    //Navigation Graph
+    implementation deps.navigation_graph.navigation_fragment
+    implementation deps.navigation_graph.navigation_ui
+
+    //livedata
+    implementation deps.livedata.livedata
+    implementation deps.livedata.lifecycle_runtime
+
+    // Image Loader
+    implementation deps.image_loader.glide
+}
