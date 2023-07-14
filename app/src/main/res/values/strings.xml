@@ -16,5 +16,10 @@
 
     <!--Validation Error-->
     <string name="err_no_network_available">Please check your internet connection and try again later.</string>
-
+    <string name="err_enter_user_name">Please enter your user name!!!</string>
+    <string name="err_enter_valid_name">Your user name must be more than 3 and less than 35 characters</string>
+    <string name="err_enter_email_address">Please enter your email!!!</string>
+    <string name="err_valid_email">Please enter a valid email!!!</string>
+    <string name="err_enter_password">Please enter your password!!!</string>
+    <string name="err_valid_password">Password must be at least 8 and less than 35 characters, and must include at least one upper case letter, one lower case letter, and one numeric digits, and can include special characters!!!</string>
 </resources>

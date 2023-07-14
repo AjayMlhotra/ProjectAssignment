@@ -5,15 +5,15 @@ import com.google.gson.annotations.SerializedName
 
 data class EmailArticleResponse(
     @SerializedName("results")
-    val results: List<Result?>?,
-    @SerializedName("status")
-    val status: String?
+    val results: List<Result?>?
 ) : BaseResponse() {
     data class Result(
         @SerializedName("media")
         val media: List<Media?>?,
         @SerializedName("title")
         val title: String?,
+        @SerializedName("source")
+        val source: String?,
     ) {
         data class Media(
             @SerializedName("media-metadata")

@@ -42,6 +42,7 @@ kapt {
 dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation deps.kotlin.junit
+    testImplementation "com.google.truth:truth:1.1.4"
     androidTestImplementation deps.kotlin.test
     androidTestImplementation deps.kotlin.espresso
 
